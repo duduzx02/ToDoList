@@ -2,8 +2,9 @@ import { useState } from 'react'
 
 import Todo from './components/Todo';
 
-import "./App.css"
+import TodoForm from './components/TodoForm';
 
+import "./App.css"
 
 function App() {
   const [todos, setTodos] = useState([
@@ -32,9 +33,10 @@ function App() {
       <h1>Lista de Tarefas</h1>
       <div className="todo-list">
         {todos.map((todo) => (
-          <Todo todo={todo}/>
+          <Todo todo={todo} />
         ))}
       </div>
+      <TodoForm/>
     </div>
   );
 }
