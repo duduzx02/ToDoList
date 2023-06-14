@@ -1,17 +1,17 @@
 import React from 'react'
 
-const Todo = ({todo, removeTodo}) => {
+const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
-    <div className="todo">
-    <div className="content">
-      <p className='text'>{todo.text}</p>
-      <p className="category">({todo.category})</p>
+    <div className="todo" style={{ textDecoration: todo.isCompleted ? "line-through" : "" }}>
+      <div className="content">
+        <p className='text'>{todo.text}</p>
+        <p className="category">({todo.category})</p>
+      </div>
+      <div>
+        <button className='complete' onClick={() => completeTodo(todo.id)}>✅</button>
+        <button className='remove' onClick={() => removeTodo(todo.id)}>❌</button>
+      </div>
     </div>
-    <div>
-      <button className='complete'>✅</button>
-      <button className='remove' onClick={() => removeTodo(todo.id)}>❌</button>
-    </div>
-  </div>
   )
 }
 
